@@ -57,6 +57,19 @@ describe('/api/tree', () => {
       },
     }];
 
-    expect(JSON.parse(response.text)).toEqual(basicTree);
+    expect(JSON.parse(response.text)).toStrictEqual(basicTree);
+  });
+});
+
+xdescribe('POST /api/tree', () => {
+  let response;
+
+  beforeEach(async () => {
+    const newItem = { parent: 2, label: 'snake' };
+    response = await request.post('/api/tree').set('Content-Type', 'application/json').send(JSON.stringify(newItem));
+  });
+
+  it('saves a new record to the tree', () => {
+    expect(response.status).toBe(200);
   });
 });

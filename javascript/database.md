@@ -11,10 +11,10 @@ Items:
 |  1 | root     | null      |
 |  2 | ant      | 1         |
 |  3 | bear     | 1         |
-|  7 | frog     | 1         |
 |  4 | cat      | 3         |
 |  5 | dog      | 3         |
 |  6 | elephant | 5         |
+|  7 | frog     | 1         |
 +----+----------+-----------+
 
 ## Queries
