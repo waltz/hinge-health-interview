@@ -16,3 +16,23 @@ Items:
 |  5 | dog      | 3         |
 |  6 | elephant | 5         |
 +----+----------+-----------+
+
+## Queries
+
+Here are some sample queries that will support some common create, read, update, and delete operations on our item data.
+
+### Fetching the Entire Tree of Items
+
+`SELECT id, label, parent FROM items`
+
+### Add a New Item as a Child to Another Item
+
+`INSERT INTO items VALUES (1, 'root', null)`
+
+### Delete an Item if it Has No Children
+
+`DELETE FROM items WHERE items.id = 4 AND NOT EXISTS (SELECT parent FROM items WHERE parent = items.id)`
+
+### Change the Parent of an Item
+
+`UPDATE items SET id=999 WHERE id=4`
